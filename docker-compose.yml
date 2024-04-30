@@ -1,11 +1,11 @@
-version: "3"
+version: '3'
 services:
   client:
-    image: "brutalpsy/multi-client-10-14"
+    image: 'brutalpsy/multi-client-10-14'
     mem_limit: 128m
     hostname: client
   server:
-    image: "brutalpsy/multi-server-10-14"
+    image: 'brutalpsy/multi-server-10-14'
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,15 +17,15 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "brutalpsy/multi-worker-10-14"
+    image: 'brutalpsy/multi-worker-10-14'
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "brutalpsy/multi-nginx-10-14"
+    image: 'brutalpsy/multi-nginx-10-14'
     mem_limit: 128m
     hostname: nginx
     ports:
-      - "80:80"
+      - '80:80'
